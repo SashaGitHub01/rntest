@@ -1,9 +1,10 @@
 import React, { PropsWithChildren } from "react";
 import { View } from "react-native";
+import { HomeScreenProps, SCREENS } from "..";
 
-interface HomeScreenProps {}
-
-const HomeScreen: React.FC<PropsWithChildren<HomeScreenProps>> = ({}) => {
+const HomeScreen: React.FC<PropsWithChildren<HomeScreenProps>> = ({
+  navigation,
+}) => {
   return <View></View>;
 };
 
