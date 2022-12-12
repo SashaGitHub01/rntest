@@ -5,7 +5,7 @@ import { TabMain, TabProfile } from "@assets/index";
 import ProfileScreen from "@src/screens/ProfileScreen/ProfileScreen";
 import { Image, StyleProp, View, ViewProps, ViewStyle } from "react-native";
 import logo from "@assets/icon.png";
-import { AppScreenProps, SCREENS, Tab } from "../../screens";
+import { AppScreenProps, SCREENS, Tab } from "../screens";
 
 const AppNavigation: React.FC<PropsWithChildren<AppScreenProps>> = () => {
   return (
@@ -35,17 +35,8 @@ const AppNavigation: React.FC<PropsWithChildren<AppScreenProps>> = () => {
                 },
               ]}
             >
-              <View style={{ width: 40, height: 40 }}>
-                <Image
-                  source={logo}
-                  resizeMode="contain"
-                  style={{
-                    width: undefined,
-                    height: "100%",
-                    aspectRatio: 1,
-                    alignSelf: "center",
-                  }}
-                />
+              <View style={{ width: 50, height: 50 }}>
+                <Image source={logo} resizeMode='contain' style={{width: undefined, height: undefined, aspectRatio: 1}} />
               </View>
             </View>
           ),

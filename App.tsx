@@ -3,8 +3,21 @@ import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
-import RootNavigation from "@src/components/navigation";
+import RootNavigation from "@src/navigation";
 import { useEffect } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const client = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 0,
+    },
+
+    mutations: {
+      retry: 0,
+    },
+  },
+});
 
 SplashScreen.preventAutoHideAsync().catch(console.log);
 
@@ -27,11 +40,13 @@ export default function App() {
 
   return (
     <>
-      <SafeAreaProvider>
-        <NavigationContainer>
-          <RootNavigation />
-        </NavigationContainer>
-      </SafeAreaProvider>
+      <QueryClientProvider client={client}>
+        <SafeAreaProvider>
+          <NavigationContainer>
+            <RootNavigation />
+          </NavigationContainer>
+        </SafeAreaProvider>
+      </QueryClientProvider>
       <StatusBar />
     </>
   );

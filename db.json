@@ -1,0 +1,50 @@
+{
+  "stories_preview": [
+    {
+      "id": 1,
+      "image": "https://avatars.githubusercontent.com/u/91053244?v=4",
+      "username": "username 1"
+    },
+
+    {
+      "id": 2,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png",
+      "username": "username usernameusername"
+    },
+
+    {
+      "id": 3,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png",
+      "username": "username usernameusername"
+    },
+
+    {
+      "id": 4,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+      "username": "username usernameusername"
+    },
+    {
+      "id": 5,
+      "image": "https://avatars.githubusercontent.com/u/91053244?v=4",
+      "username": "username 1"
+    },
+
+    {
+      "id": 6,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png",
+      "username": "username usernameusername"
+    },
+
+    {
+      "id": 7,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png",
+      "username": "username usernameusername"
+    },
+
+    {
+      "id": 8,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+      "username": "username usernameusername"
+    }
+  ]
+}
