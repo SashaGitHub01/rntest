@@ -38,14 +38,9 @@ const FeedList: React.FC<PropsWithChildren<FeedListProps>> = () => {
           <Progress.Circle size={40} thickness={210} indeterminate />
         </View>
       )}
-      {/* {data &&
-        data.pages.map(
-          (item) =>
-            videos.data &&
-            videos.data.map((v) => <VideoItem key={v._id} {...v} />),
-        )} */}
       {data && (
         <FlatList
+          showsVerticalScrollIndicator={false}
           keyExtractor={(_, i) => `${i}`}
           data={data.pages}
           renderItem={({ item }) => {
