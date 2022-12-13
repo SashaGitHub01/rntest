@@ -11,3 +11,5 @@ export const parseQueryParams = (obj: AnyObject) => {
 
   return queries.join("&");
 };
+
+export const calcOffset = (page: number, limit: number) => page * limit - limit;

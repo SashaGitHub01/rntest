@@ -33,6 +33,11 @@
     "global-require": ["off"],
     "react/prop-types": ["off"],
     "@typescript-eslint/no-use-before-define": ["off"],
-    "@typescript-eslint/return-await": ["off"]
+    "@typescript-eslint/return-await": ["off"],
+    "@typescript-eslint/naming-convention": ["off"],
+    "react/require-default-props": ["off"],
+    "no-else-return": ["off"],
+    "consistent-return": ["off"],
+    "prefer-destructuring": ["off"]
   }
 }

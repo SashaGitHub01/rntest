@@ -1,9 +1,11 @@
 import React, { PropsWithChildren } from "react";
-import { StyleSheet, View, ScrollView } from "react-native";
+import { StyleSheet, ScrollView } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@src/data/constants";
 import { StoriesApi } from "@src/API/StoriesApi";
-import { Text } from "react-native-svg";
+import { generateBoxShadowStyle } from "@src/styles/shadow";
+import { theme } from "@src/styles/theme";
+import StoryCircle from "./StoryCircle/StoryCircle";
 
 interface StoriesListProps {}
 
@@ -13,19 +15,34 @@ const StoriesList: React.FC<PropsWithChildren<StoriesListProps>> = () => {
   });
 
   return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+    <ScrollView
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      style={[
+        styles.wrapper,
+        generateBoxShadowStyle({
+          offset: { width: 0, height: 2 },
+          elevation: 7,
+          shadowOpacity: 0.27,
+          shadowRadius: 2.8,
+          shadowColorAndroid: "#000",
+          shadowColorIos: "#000",
+        }),
+      ]}
+    >
       {!!data &&
         data?.map((item) => {
-          return (
-            <View key={item.id}>
-              <Text>{item.username}</Text>
-            </View>
-          );
+          return <StoryCircle key={item.id} {...item} />;
         })}
     </ScrollView>
   );
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  wrapper: {
+    paddingHorizontal: theme.space.sm,
+    backgroundColor: theme.colors.white,
+  },
+});
 
 export default StoriesList;
