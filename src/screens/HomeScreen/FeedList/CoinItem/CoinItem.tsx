@@ -1,26 +1,31 @@
 import Typography from "@src/components/Typography/Typography";
+import { numeralHelpers } from "@src/helpers";
 import { generateBoxShadowStyle } from "@src/styles/shadow";
 import { theme } from "@src/styles/theme";
 import { ICoin } from "@src/types/coins.types";
 import React, { PropsWithChildren } from "react";
 import { Image, StyleSheet, View } from "react-native";
 import { SvgUri } from "react-native-svg";
+import Antd from "react-native-vector-icons/AntDesign";
+import { RectButton } from "react-native-gesture-handler";
 
 interface CoinItemProps extends ICoin {}
 
 const CoinItem: React.FC<PropsWithChildren<CoinItemProps>> = ({
   uuid,
-  symbol,
   name,
   color,
   iconUrl,
   price,
   rank,
+  change,
 }) => {
+  const isPositive = +change > 0;
   const isSvg = iconUrl?.split(".").includes("svg");
 
   return (
-    <View
+    <RectButton
+      rippleColor={`${color}`}
       style={[
         styles.wrapper,
         generateBoxShadowStyle({
@@ -35,22 +40,47 @@ const CoinItem: React.FC<PropsWithChildren<CoinItemProps>> = ({
     >
       <View style={styles.left}>
         {isSvg ? (
-          <SvgUri width="50" height="50" uri={iconUrl} style={styles.icon} />
+          <SvgUri
+            width="50"
+            height="50"
+            uri={String(iconUrl)}
+            style={styles.icon}
+          />
         ) : (
           <Image source={{ uri: iconUrl }} style={styles.icon} />
         )}
       </View>
       <View style={styles.right}>
-        <View style={styles.title_row}>
-          <View style={[styles.circle, { backgroundColor: color }]} />
-          <View style={styles.title_cont}>
-            <Typography variant="h2">
-              #{rank} {name}
+        <View style={styles.info}>
+          <View style={styles.title_row}>
+            <View style={[styles.circle, { backgroundColor: color }]} />
+            <View style={styles.title_cont}>
+              <Typography variant="h2">
+                #{rank} {name}
+              </Typography>
+            </View>
+          </View>
+          <View>
+            <Typography color="secondary" variant="body">
+              {numeralHelpers.formatNumber(price)}
+            </Typography>
+          </View>
+        </View>
+        <View style={styles.change}>
+          <View style={styles.change_row}>
+            <Antd
+              name={isPositive ? "caretup" : "caretdown"}
+              color={isPositive ? "green" : "red"}
+            />
+            <Typography
+              style={{ color: isPositive ? "green" : "red", paddingLeft: 5 }}
+            >
+              {String(change)}
             </Typography>
           </View>
         </View>
       </View>
-    </View>
+    </RectButton>
   );
 };
 
@@ -60,7 +90,8 @@ const styles = StyleSheet.create({
     marginBottom: theme.space.md,
     backgroundColor: theme.colors.white,
     borderRadius: 4,
-    padding: theme.space.sm,
+    paddingHorizontal: theme.space.sm,
+    paddingVertical: theme.space.md,
   },
 
   left: {
@@ -70,6 +101,22 @@ const styles = StyleSheet.create({
 
   right: {
     flex: 1,
+    flexDirection: "row",
+  },
+
+  info: {
+    flex: 1,
+    marginRight: 5,
+  },
+
+  change: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  change_row: {
+    flexDirection: "row",
+    alignItems: "center",
   },
 
   icon: {

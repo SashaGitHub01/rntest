@@ -11,6 +11,8 @@ import type { CompositeScreenProps } from "@react-navigation/native";
 
 export enum SCREENS {
   App = "App",
+  Coin = "Coin",
+  HomeMain = "HomeMain",
   Stories = "Stories",
   Home = "Home",
   Profile = "Profile",
@@ -24,6 +26,11 @@ export type TabParamList = {
 export type RootStackParamList = {
   [SCREENS.App]: NavigatorScreenParams<TabParamList>;
   [SCREENS.Stories]: { storyId: string };
+};
+
+export type HoomStackParamList = {
+  [SCREENS.Coin]: { coinId: string };
+  [SCREENS.HomeMain]: undefined;
 };
 
 export const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -42,6 +49,15 @@ export interface HomeScreenProps
   extends CompositeScreenProps<
     BottomTabScreenProps<TabParamList, SCREENS.Home>,
     NativeStackScreenProps<RootStackParamList>
+  > {}
+
+export interface CoinScreenProps
+  extends CompositeScreenProps<
+    NativeStackScreenProps<HoomStackParamList, SCREENS.Coin>,
+    CompositeScreenProps<
+      BottomTabScreenProps<TabParamList, SCREENS.Home>,
+      NativeStackScreenProps<RootStackParamList>
+    >
   > {}
 
 export interface ProfileScreenProps

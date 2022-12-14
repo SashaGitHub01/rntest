@@ -4,13 +4,14 @@ import { StyleSheet, Text as RNText, TextProps } from "react-native";
 
 interface ITypographyProps extends TextProps {
   variant?: keyof typeof theme.fonts;
-  color?: ''
+  color?: 'primary' | 'secondary'
 }
 
 const Typography: React.FC<PropsWithChildren<ITypographyProps>> = ({
   children,
   style = {},
   variant = 'body',
+  color = 'primary',
   ...props
 }) => {
   const passedStyles = Array.isArray(style)
@@ -19,7 +20,7 @@ const Typography: React.FC<PropsWithChildren<ITypographyProps>> = ({
 
   return (
     <RNText
-      style={[styles.defaultText, styles[variant], { ...passedStyles }]}
+      style={[styles.defaultText, styles[variant], styles[color], { ...passedStyles }]}
       {...props}
     >
       {children}
@@ -38,6 +39,12 @@ const styles = StyleSheet.create({
   subtitle: { fontSize: theme.fonts.subtitle, lineHeight: 22 },
   body: { fontSize: theme.fonts.body, lineHeight: 21 },
   small: { fontSize: theme.fonts.small, lineHeight: 18 },
+  primary: {
+    color: theme.colors.primary,
+  },
+  secondary: {
+    color: theme.colors.secondary,
+  },
 });
 
 export default Typography;

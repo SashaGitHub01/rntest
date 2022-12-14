@@ -1,3 +1,4 @@
+import numeral from 'numeral'
 import { AnyObject } from "@src/types/AnyObject";
 
 export const parseQueryParams = (obj: AnyObject) => {
@@ -13,3 +14,10 @@ export const parseQueryParams = (obj: AnyObject) => {
 };
 
 export const calcOffset = (page: number, limit: number) => page * limit - limit;
+
+export const numeralHelpers = {
+  formatNumber: (num: number, format = '$0,000.00') => {
+    if (!num) return NaN;
+    return numeral(num).format(format);
+  },
+};
