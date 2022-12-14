@@ -54,7 +54,7 @@ const FeedList: React.FC<PropsWithChildren<FeedListProps>> = () => {
       },
     );
 
-  const onSubmit = (values: IFormValues) => {
+  const onSubmit = () => {
     fetchNextPage()
   };
 

@@ -5,9 +5,12 @@ import { TabMain, TabProfile } from "@assets/index";
 import ProfileScreen from "@src/screens/ProfileScreen/ProfileScreen";
 import { Image, StyleProp, View, ViewProps, ViewStyle } from "react-native";
 import logo from "@assets/icon.png";
-import { AppScreenProps, SCREENS, Tab } from "../screens";
+import { RootStackScreenProps, SCREENS, Tab } from "../screens";
+import HomeNavigation from "./HomeNavigation";
 
-const AppNavigation: React.FC<PropsWithChildren<AppScreenProps>> = () => {
+const AppNavigation: React.FC<
+  PropsWithChildren<RootStackScreenProps<SCREENS.App>>
+> = () => {
   return (
     <Tab.Navigator
       initialRouteName={SCREENS.Home}
@@ -18,28 +21,9 @@ const AppNavigation: React.FC<PropsWithChildren<AppScreenProps>> = () => {
     >
       <Tab.Screen
         name={SCREENS.Home}
-        component={HomeScreen}
+        component={HomeNavigation}
         options={{
-          headerLeftContainerStyle: {
-            flex: 1,
-            flexDirection: "row",
-          },
-          headerTitle: (props) => (
-            <View
-              {...(props as ViewProps)}
-              style={[
-                (props.style || {}) as StyleProp<ViewStyle>,
-                {
-                  justifyContent: "center",
-                  alignItems: "center",
-                },
-              ]}
-            >
-              <View style={{ width: 50, height: 50 }}>
-                <Image source={logo} resizeMode='contain' style={{width: undefined, height: undefined, aspectRatio: 1}} />
-              </View>
-            </View>
-          ),
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <TabMain width={size} height={size} color={color} />
           ),

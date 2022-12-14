@@ -8,6 +8,11 @@ import { Image, StyleSheet, View } from "react-native";
 import { SvgUri } from "react-native-svg";
 import Antd from "react-native-vector-icons/AntDesign";
 import { RectButton } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import {
+  HomeStackScreenProps,
+  SCREENS,
+} from "@src/screens";
 
 interface CoinItemProps extends ICoin {}
 
@@ -20,12 +25,26 @@ const CoinItem: React.FC<PropsWithChildren<CoinItemProps>> = ({
   rank,
   change,
 }) => {
+  const { navigate } = useNavigation<HomeStackScreenProps<SCREENS.HomeMain>["navigation"]>();
   const isPositive = +change > 0;
   const isSvg = iconUrl?.split(".").includes("svg");
+
+  const handleNav = () => {
+    navigate(SCREENS.App, {
+      screen: SCREENS.Home,
+      params: {
+        screen: SCREENS.Coin,
+        params: {
+          coinId: uuid
+        }
+      },
+    });
+  };
 
   return (
     <RectButton
       rippleColor={`${color}`}
+      onPress={handleNav}
       style={[
         styles.wrapper,
         generateBoxShadowStyle({

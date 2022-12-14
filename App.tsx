@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as SplashScreen from "expo-splash-screen";
 import RootNavigation from "@src/navigation";
 import { useEffect } from "react";
@@ -42,9 +42,11 @@ export default function App() {
     <>
       <QueryClientProvider client={client}>
         <SafeAreaProvider>
-          <NavigationContainer>
-            <RootNavigation />
-          </NavigationContainer>
+          <SafeAreaView style={{ flex: 1 }}>
+            <NavigationContainer>
+              <RootNavigation />
+            </NavigationContainer>
+          </SafeAreaView>
         </SafeAreaProvider>
       </QueryClientProvider>
       <StatusBar />

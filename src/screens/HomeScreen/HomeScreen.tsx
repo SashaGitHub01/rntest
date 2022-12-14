@@ -1,11 +1,13 @@
 import { theme } from "@src/styles/theme";
 import React, { PropsWithChildren } from "react";
 import { StyleSheet, View } from "react-native";
-import { HomeScreenProps, SCREENS } from "..";
+import { HomeStackScreenProps, SCREENS } from "..";
 import FeedList from "./FeedList/FeedList";
 import StoriesList from "./StoriesList/StoriesList";
 
-const HomeScreen: React.FC<PropsWithChildren<HomeScreenProps>> = () => {
+const HomeScreen: React.FC<
+  PropsWithChildren<HomeStackScreenProps<SCREENS.HomeMain>>
+> = () => {
   return (
     <View style={styles.wrapper}>
       <View style={styles.header}>
