@@ -1,10 +1,7 @@
 import React, { PropsWithChildren } from "react";
-import HomeScreen from "@screens/HomeScreen/HomeScreen";
 import { theme } from "@src/styles/theme";
 import { TabMain, TabProfile } from "@assets/index";
 import ProfileScreen from "@src/screens/ProfileScreen/ProfileScreen";
-import { Image, StyleProp, View, ViewProps, ViewStyle } from "react-native";
-import logo from "@assets/icon.png";
 import { RootStackScreenProps, SCREENS, Tab } from "../screens";
 import HomeNavigation from "./HomeNavigation";
 

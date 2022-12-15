@@ -4,18 +4,22 @@ import React, { PropsWithChildren } from "react";
 import { StyleSheet, View, Image, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-interface StoryCircleProps extends IStoryPreview {}
+interface StoryCircleProps extends IStoryPreview {
+  handleNav: (id: number) => void;
+}
 
 const StoryCircle: React.FC<PropsWithChildren<StoryCircleProps>> = ({
   id,
   image,
+  handleNav,
 }) => {
   return (
     <View style={styles.wrapper}>
       <Pressable
         style={({ pressed }) => ({
-          opacity: pressed ? 0.4: 1,
+          opacity: pressed ? 0.4 : 1,
         })}
+        onPress={() => handleNav(id)}
       >
         <LinearGradient
           colors={["#ebc804", "#cc2b5e", "#753a88"]}

@@ -32,7 +32,7 @@ export type TabParamList = {
 
 export type RootStackParamList = {
   [SCREENS.App]: NavigatorScreenParams<TabParamList>;
-  [SCREENS.Stories]: { storyId: string };
+  [SCREENS.Stories]: { storyId: number };
 };
 
 export const RootStack = createNativeStackNavigator<RootStackParamList>();

@@ -4,7 +4,7 @@ import { generateBoxShadowStyle } from "@src/styles/shadow";
 import { theme } from "@src/styles/theme";
 import { ICoin } from "@src/types/coins.types";
 import React, { PropsWithChildren } from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { Image, Pressable, StyleSheet, View } from "react-native";
 import { SvgUri } from "react-native-svg";
 import Antd from "react-native-vector-icons/AntDesign";
 import { RectButton } from "react-native-gesture-handler";
@@ -42,8 +42,7 @@ const CoinItem: React.FC<PropsWithChildren<CoinItemProps>> = ({
   };
 
   return (
-    <RectButton
-      rippleColor={`${color}`}
+    <Pressable
       onPress={handleNav}
       style={[
         styles.wrapper,
@@ -99,7 +98,7 @@ const CoinItem: React.FC<PropsWithChildren<CoinItemProps>> = ({
           </View>
         </View>
       </View>
-    </RectButton>
+    </Pressable>
   );
 };
 

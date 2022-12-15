@@ -5,14 +5,24 @@ import { QUERY_KEYS } from "@src/data/constants";
 import { StoriesApi } from "@src/API/StoriesApi";
 import { generateBoxShadowStyle } from "@src/styles/shadow";
 import { theme } from "@src/styles/theme";
+import { useNavigation } from "@react-navigation/native";
+import { HomeStackScreenProps, SCREENS } from "@src/screens";
 import StoryCircle from "./StoryCircle/StoryCircle";
 
 interface StoriesListProps {}
 
 const StoriesList: React.FC<PropsWithChildren<StoriesListProps>> = () => {
+  const { navigate } =
+    useNavigation<HomeStackScreenProps<SCREENS.HomeMain>['navigation']>();
   const { data } = useQuery([QUERY_KEYS.stories], async () => {
     return await StoriesApi.getStories();
   });
+
+  const handleNav = (id: number) => {
+    navigate(SCREENS.Stories, {
+      storyId: id,
+    });
+  };
 
   return (
     <ScrollView
@@ -32,7 +42,7 @@ const StoriesList: React.FC<PropsWithChildren<StoriesListProps>> = () => {
     >
       {!!data &&
         data?.map((item) => {
-          return <StoryCircle key={item.id} {...item} />;
+          return <StoryCircle handleNav={handleNav} key={item.id} {...item} />;
         })}
     </ScrollView>
   );

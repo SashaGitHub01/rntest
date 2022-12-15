@@ -22,29 +22,49 @@
       "id": 4,
       "image": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
       "username": "username usernameusername"
-    },
+    }
+  ],
+
+  "stories": [
     {
-      "id": 5,
+      "id": 1,
       "image": "https://images.unsplash.com/photo-1665095111931-fc4fa813e21c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDU1fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      "username": "username 1"
+      "username": "username 1",
+      "list": [
+        "https://images.unsplash.com/photo-1668184162944-7ce7cdf1fc35?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE2fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1662535800386-271f33a9343a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg5fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1662351557340-1194884f2aa8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg4fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ]
     },
-
     {
-      "id": 6,
+      "id": 2,
       "image": "https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png",
-      "username": "username usernameusername"
+      "username": "username2",
+      "list": [
+        "https://images.unsplash.com/photo-1670095889208-96b2ef69ce4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8eEh4WVRNSExnT2N8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60"
+      ]
     },
 
     {
-      "id": 7,
+      "id": 3,
       "image": "https://github.githubassets.com/images/modules/profile/achievements/pull-shark-default.png",
-      "username": "username usernameusername"
+      "username": "username321",
+      "list": [
+        "https://plus.unsplash.com/premium_photo-1670491584909-fad9d3a4f66d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMxfHhIeFlUTUhMZ09jfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1670220591949-930e033d40da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE3fHhqUFI0aGxrQkdBfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1662351557340-1194884f2aa8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg4fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ]
     },
 
+    
     {
-      "id": 8,
-      "image": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
-      "username": "username usernameusername"
+      "id": 4,
+      "image": "https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png",
+      "username": "username_4",
+      "list": [
+        "https://images.unsplash.com/photo-1670095889208-96b2ef69ce4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8eEh4WVRNSExnT2N8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60",
+        "https://images.unsplash.com/photo-1662535800386-271f33a9343a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDg5fGFldTZyTC1qNmV3fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      ]
     }
   ]
 }
